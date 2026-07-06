@@ -11,10 +11,19 @@ import org.springframework.jdbc.core.JdbcTemplate;
 @Configuration
 public class VectorStoreConfig {
 
+//    @Bean
+//    public PgVectorStore vectorStore(
+//            JdbcTemplate jdbcTemplate,
+//            @Qualifier("ollamaEmbeddingModel") EmbeddingModel embeddingModel) {
+//
+//        return PgVectorStore.builder(jdbcTemplate, embeddingModel)
+//                .build();
+//    }
+
     @Bean
     public PgVectorStore vectorStore(
             JdbcTemplate jdbcTemplate,
-            @Qualifier("ollamaEmbeddingModel") EmbeddingModel embeddingModel) {
+            EmbeddingModel embeddingModel) {
 
         return PgVectorStore.builder(jdbcTemplate, embeddingModel)
                 .build();
