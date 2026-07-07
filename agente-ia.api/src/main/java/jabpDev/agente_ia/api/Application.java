@@ -1,9 +1,10 @@
 package jabpDev.agente_ia.api;
 
+import org.springframework.ai.model.openai.autoconfigure.OpenAiEmbeddingAutoConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
+@SpringBootApplication(exclude = { OpenAiEmbeddingAutoConfiguration.class })
 public class Application {
 
 	public static void main(String[] args) {
