@@ -30,19 +30,4 @@ public class VectorStoreConfig {
         return PgVectorStore.builder(jdbcTemplate, embeddingModel)
                 .build();
     }
-
-
-    @Bean
-    @Primary
-    public EmbeddingModel localEmbeddingModel() {
-        // Criando explicitamente o modelo local do Transformers
-        TransformersEmbeddingModel embeddingModel = new TransformersEmbeddingModel();
-        try {
-            // Isso força o Spring AI a rodar o processo de inicialização do ONNX imediatamente
-            embeddingModel.afterPropertiesSet();
-        } catch (Exception e) {
-            throw new IllegalStateException("Falha crítica ao inicializar o modelo ONNX local: " + e.getMessage(), e);
-        }
-        return embeddingModel;
-    }
 }
