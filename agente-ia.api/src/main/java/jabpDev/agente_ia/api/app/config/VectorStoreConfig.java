@@ -1,7 +1,7 @@
 package jabpDev.agente_ia.api.app.config;
 
 import com.openai.models.vectorstores.VectorStore;
-import org.springframework.ai.embedding.EmbeddingModel;
+import org.springframework.ai.transformers.TransformersEmbeddingModel;
 import org.springframework.ai.vectorstore.pgvector.PgVectorStore;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -23,7 +23,7 @@ public class VectorStoreConfig {
     @Bean
     public PgVectorStore vectorStore(
             JdbcTemplate jdbcTemplate,
-            EmbeddingModel embeddingModel) {
+            TransformersEmbeddingModel embeddingModel) {
 
         return PgVectorStore.builder(jdbcTemplate, embeddingModel)
                 .build();
