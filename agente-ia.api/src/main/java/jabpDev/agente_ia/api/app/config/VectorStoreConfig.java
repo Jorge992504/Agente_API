@@ -25,32 +25,4 @@ public class VectorStoreConfig {
 //        return PgVectorStore.builder(jdbcTemplate, embeddingModel)
 //                .build();
 //    }
-
-    @Bean
-    @Primary
-    public PgVectorStore vectorStore() {
-
-        PgVectorStore pgVectorStore = new PgVectorStore() {
-            @Override
-            public void add(List<Document> documents) {
-                // Mock: não faz nada
-            }
-
-            @Override
-            public void accept(List<Document> documents) {
-                // Mock: não faz nada
-            }
-
-            @Override
-            public List<Document> similaritySearch(String query) {
-                return Collections.emptyList(); // Retorna vazio sem dar erro
-            }
-
-            @Override
-            public List<Document> similaritySearch(SearchRequest request) {
-                return Collections.emptyList(); // Retonar vazio sem dar erro
-            }
-        };
-        return pgVectorStore;
-    }
 }

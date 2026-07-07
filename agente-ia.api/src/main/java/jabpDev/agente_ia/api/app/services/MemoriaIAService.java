@@ -25,7 +25,7 @@ public class MemoriaIAService {
                 "idMensagem", idMensagem.toString(),
                 "remetente", remetente
         ));
-        vectorStore.add(List.of(doc));
+//        vectorStore.add(List.of(doc));
     }
 
     public List<String> buscarContextoRelevante(Long idChat, String pergunta){
