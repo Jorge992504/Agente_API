@@ -2,7 +2,6 @@ package jabpDev.agente_ia.api.app.config;
 
 import com.openai.models.vectorstores.VectorStore;
 import org.springframework.ai.embedding.EmbeddingModel;
-import org.springframework.ai.transformers.TransformersEmbeddingModel;
 import org.springframework.ai.vectorstore.pgvector.PgVectorStore;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
