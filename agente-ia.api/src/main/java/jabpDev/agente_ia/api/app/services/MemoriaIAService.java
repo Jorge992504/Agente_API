@@ -35,7 +35,8 @@ public class MemoriaIAService {
                 .filterExpression("idChat == " + idChat)
                 .build();
 
-//        return vectorStore.similaritySearch(request).stream().map(Document::getText).toList();
+
         return List.of();
     }
 }
+//        return vectorStore.similaritySearch(request).stream().map(Document::getText).toList();
